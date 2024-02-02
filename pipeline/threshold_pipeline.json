@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "threshold_count_check",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -38,13 +38,13 @@
 				"type": "IfCondition",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "threshold_count_check",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "Lookup2",
+						"activity": "customer_count_check",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -53,12 +53,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(activity('Lookup2').output.firstRow.totalcount,int(activity('Lookup1').output.firstRow.thresholcount))",
+						"value": "@greater(activity('threshold_count_check').output.firstRow.totalcount,int(activity('customer_count_check').output.firstRow.thresholcount))",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
 						{
-							"name": "Copy data1",
+							"name": "copy customer json",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -103,7 +103,7 @@
 				}
 			},
 			{
-				"name": "Lookup2",
+				"name": "customer_count_check",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
