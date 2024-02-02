@@ -1,0 +1,20 @@
+{
+	"name": "customer_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "adls_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "customer.json",
+				"folderPath": "customer_json",
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {}
+	}
+}
