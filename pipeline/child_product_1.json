@@ -43,21 +43,14 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "generic_sql_ds",
-						"type": "DatasetReference",
-						"parameters": {
-							"schemaname": "SalesLT",
-							"tablename": "Product"
-						}
+						"referenceName": "product_sql_db",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "generic_adls_ds",
-						"type": "DatasetReference",
-						"parameters": {
-							"foldername": "Product"
-						}
+						"referenceName": "product_csv",
+						"type": "DatasetReference"
 					}
 				]
 			}
