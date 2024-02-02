@@ -1,0 +1,16 @@
+{
+	"name": "customer_copy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sqldb_ls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "customer_copy"
+		}
+	}
+}
