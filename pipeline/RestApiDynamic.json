@@ -73,6 +73,59 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Fail_Alert_mail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-22.centralindia.logic.azure.com:443/workflows/38fbc12fc2b144078f58c03c8dc3dd4f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MaL_-HVMNfzJQ_YKCrREYcfesZwudTw3EeyYT_4fd1c",
+					"body": "Fail from sayantan adf rest api"
+				}
+			},
+			{
+				"name": "Successful",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-22.centralindia.logic.azure.com:443/workflows/38fbc12fc2b144078f58c03c8dc3dd4f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MaL_-HVMNfzJQ_YKCrREYcfesZwudTw3EeyYT_4fd1c",
+					"body": {
+						"value": "@pipeline().DataFactory",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
