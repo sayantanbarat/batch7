@@ -1,0 +1,9 @@
+{
+	"name": "adfsb1712",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a574544e-9647-472f-802a-29f6f8514f20",
+		"tenantId": "6ae3877a-bdbd-4c10-b439-bbf3e2daeefd"
+	}
+}
