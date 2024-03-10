@@ -13,6 +13,9 @@
 		},
 		"RestCountries_properties_typeProperties_url": {
 			"value": "https://restcountries.com/v3.1/name/"
+		},
+		"storage1_properties_typeProperties_scope": {
+			"value": "/subscriptions/66d8926a-340a-4e4c-b507-726a7525b8bb/resourceGroups/Azurelib-Academy/providers/Microsoft.Storage/storageAccounts/stgsb1712"
 		}
 	}
 }
