@@ -1,0 +1,33 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "RestApiDynamic",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-03-10T00:00:00",
+				"endTime": "2024-03-11T18:32:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						6
+					],
+					"hours": [
+						0
+					]
+				}
+			}
+		}
+	}
+}
