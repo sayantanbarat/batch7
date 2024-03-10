@@ -5,11 +5,20 @@
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"cname2": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cname2",
+					"type": "Expression"
+				},
 				"folderPath": "countryjson",
 				"fileSystem": "output"
 			}

@@ -61,7 +61,13 @@
 							"outputs": [
 								{
 									"referenceName": "Json1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"cname2": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
