@@ -1,0 +1,23 @@
+{
+	"name": "RestResource2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestCountries",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cname": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().cname",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
