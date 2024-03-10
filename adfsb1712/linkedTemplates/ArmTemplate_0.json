@@ -298,7 +298,7 @@
 					},
 					{
 						"name": "successful",
-						"description": "successful from rest adf pipeline",
+						"description": "{}",
 						"type": "WebActivity",
 						"dependsOn": [
 							{
@@ -321,7 +321,7 @@
 							"headers": {},
 							"url": "https://prod-22.centralindia.logic.azure.com:443/workflows/38fbc12fc2b144078f58c03c8dc3dd4f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MaL_-HVMNfzJQ_YKCrREYcfesZwudTw3EeyYT_4fd1c",
 							"body": {
-								"value": "@activity('Copy data1').output",
+								"value": "{}",
 								"type": "Expression"
 							}
 						}
@@ -350,7 +350,7 @@
 							"headers": {},
 							"url": "https://prod-22.centralindia.logic.azure.com:443/workflows/38fbc12fc2b144078f58c03c8dc3dd4f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=MaL_-HVMNfzJQ_YKCrREYcfesZwudTw3EeyYT_4fd1c",
 							"body": {
-								"value": "@activity('Copy data1').output",
+								"value": "{}",
 								"type": "Expression"
 							}
 						}
