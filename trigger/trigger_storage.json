@@ -1,0 +1,25 @@
+{
+	"name": "trigger_storage",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "storage_event",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/output/blobs/countrycsv",
+			"blobPathEndsWith": ".json",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/66d8926a-340a-4e4c-b507-726a7525b8bb/resourceGroups/Azurelib-Academy/providers/Microsoft.Storage/storageAccounts/stgsb1712",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
