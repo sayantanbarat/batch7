@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://restcountries.com/v3.1/all",
+			"url": "https://restcountries.com/v3.1/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
