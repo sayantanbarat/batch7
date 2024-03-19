@@ -1,0 +1,26 @@
+{
+	"name": "Binary3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"finename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().finename",
+					"type": "Expression"
+				},
+				"fileSystem": "output"
+			}
+		}
+	}
+}

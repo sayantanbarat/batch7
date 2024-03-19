@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Parquet2",
+						"referenceName": "DelimitedText4",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -27,7 +27,7 @@
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
-						"type": "ParquetReadSettings"
+						"type": "DelimitedTextReadSettings"
 					}
 				}
 			},
@@ -63,19 +63,78 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "Parquet3",
-									"type": "DatasetReference"
+									"referenceName": "DelimitedText5",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								},
 								"fieldList": [
-									"itemName"
+									"itemName",
+									"size"
 								],
 								"storeSettings": {
 									"type": "AzureBlobFSReadSettings",
 									"enablePartitionDiscovery": false
 								},
 								"formatSettings": {
-									"type": "ParquetReadSettings"
+									"type": "DelimitedTextReadSettings"
 								}
+							}
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Get Metadata2",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@greater(activity('Get Metadata2').output.size,100)",
+									"type": "Expression"
+								},
+								"ifTrueActivities": [
+									{
+										"name": "Delete1",
+										"type": "Delete",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"dataset": {
+												"referenceName": "Binary3",
+												"type": "DatasetReference",
+												"parameters": {
+													"finename": {
+														"value": "@activity('Get Metadata2').output.itemName",
+														"type": "Expression"
+													}
+												}
+											},
+											"enableLogging": false,
+											"storeSettings": {
+												"type": "AzureBlobFSReadSettings",
+												"recursive": false,
+												"enablePartitionDiscovery": false
+											}
+										}
+									}
+								]
 							}
 						}
 					]
