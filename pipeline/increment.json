@@ -30,7 +30,7 @@
 						"referenceName": "DelimitedText8",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -56,7 +56,7 @@
 						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					},
-					"firstRowOnly": false
+					"firstRowOnly": true
 				}
 			},
 			{
@@ -88,7 +88,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from [SalesLT].[Address] where modifieddate>'@{activity('watermark').output.value}' and modifieddate<='@{activity('Lookup1').output.value}'",
+							"value": "select * from [SalesLT].[Address] where modifieddate>'@{activity('watermark').output.firstRow.Prop_0}' and modifieddate<='@{activity('Lookup1').output.firstRow.lastdate}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -151,7 +151,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "@activity('Lookup1').output.value",
+							"value": "select '@{activity('Lookup1').output.firstRow.lastdate}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
@@ -169,6 +169,21 @@
 						}
 					},
 					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureDataLakeStorage3",
+								"type": "LinkedServiceReference"
+							},
+							"path": "increment"
+						}
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"typeConversion": true,
