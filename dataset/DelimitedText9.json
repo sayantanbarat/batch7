@@ -1,0 +1,23 @@
+{
+	"name": "DelimitedText9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "custcopy.csv",
+				"fileSystem": "increment"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

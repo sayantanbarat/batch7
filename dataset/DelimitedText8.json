@@ -1,0 +1,28 @@
+{
+	"name": "DelimitedText8",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "watermark_date.txt",
+				"fileSystem": "increment"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "watermarkdate",
+				"type": "String"
+			}
+		]
+	}
+}
