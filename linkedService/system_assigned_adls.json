@@ -1,0 +1,10 @@
+{
+	"name": "system_assigned_adls",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stgsb1712.dfs.core.windows.net/"
+		}
+	}
+}
