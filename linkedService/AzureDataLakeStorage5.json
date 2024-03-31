@@ -1,0 +1,14 @@
+{
+	"name": "AzureDataLakeStorage5",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stgsb1712.dfs.core.windows.net/",
+			"credential": {
+				"referenceName": "credentialMI",
+				"type": "CredentialReference"
+			}
+		}
+	}
+}
