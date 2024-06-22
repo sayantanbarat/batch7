@@ -1,0 +1,17 @@
+{
+	"name": "agentsqldb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "sqldb1712.database.windows.net",
+			"database": "onprem1712",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqldb1712",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDA1NjJERkQ4LTA5MEUtNDg4Ny04MkRCLTU5M0UxRUE4MEZBMl8zODBhNjkzMy0yNjYwLTQxNDAtYjY5MS0wNjgzNzhlYTBkZDAiDQp9"
+		}
+	}
+}
