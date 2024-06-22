@@ -1,0 +1,16 @@
+{
+	"name": "branch_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sqlsource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Branch"
+		}
+	}
+}
